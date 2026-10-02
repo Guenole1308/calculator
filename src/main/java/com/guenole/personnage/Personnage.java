@@ -2,19 +2,14 @@ package com.guenole.personnage;
 
 public class Personnage {
 
+    private String orientation = "NORD";
+
     public String tourner(int fois) {
-        if (fois == 1) {
-            return "EST";
-        }
 
-        if (fois == 2) {
-            return "SUD";
-        }
+        String[] orientations = {"NORD", "EST", "SUD", "OUEST"};
 
-        if (fois == 3) {
-            return "OUEST";
-        }
+        orientation = orientations[fois % 4];
 
-        return "NORD";
+        return orientation;
     }
 }
